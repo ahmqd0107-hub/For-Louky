@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>For Louky❤️</title>
+<style>
+@media (max-width: 600px) {
+    video {
+        width: 70%;
+    }
+
+    .left-text,
+    .right-text {
+        font-size: 16px;
+    }
+}
+.heart {
+    position: fixed;
+    font-size: 24px;
+    animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 600px) {
+    .floating-img {
+        width: 70px !important;
+    }
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    
+}
+button {
+    display: block;
+    margin: 20px auto;
+}
+#noButton {
+    position: absolute;
+    left: 60%;
+    top: 60%;
+}
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    overflow-x: hidden;
+    background: #ffd6e7;
+}
+
+/* FLOATING PHOTOS */
+.floating-img {
+    position: absolute;
+    animation: float 12s infinite ease-in-out;
+    border-radius: 15px;
+}
+
+@keyframes float {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(-30px);}
+    100% {transform: translateY(0px);}
+}
+
+/* CENTER BOX */
+.center-box {
+    text-align: center;
+    margin-top: 1vh;
+    height: 3000px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: pink;
+}
+
+.hidden {
+    display: none;
+}
+
+/* LETTER STYLE */
+.letter-container {
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 30px;
+    background: #fff0f5;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    
+}
+
+.top-left {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-weight: bold;
+}
+
+/* FLOWING FLOWERS */
+.flower {
+    position: fixed;
+    top: -100px;
+    width: 40px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+.video-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.video-style {
+    width: 60vw;
+    max-width: 350px;
+    height: auto;
+}
+.top-text {
+    font-weight:bold;
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    margin-top: 22px;
+}
+
+.side-text {
+    font-weight:bold;
+    font-family: 'Great Vibes', cursive;
+    font-size: 46px;
+}
+</style>
+</head>
+
+<body>
+<div id="errorScreen" class="hidden center-box">
+    <h1>Wrong password 😔</h1>
+    <button onclick="goBack()">Try Again</button>
+</div>
+<div id="hearts-container"></div>
+<audio id="bgMusic" loop>
+    <source src="audiogf.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 10 FLOATING PHOTOS -->
+<div id="floatingPhotos">
+    &nbsp;<img src="photo1.jpg" class="floating-img" style="top:24%; left:4%;" width="137" height="103">
+     <img src="photo2.jpg" class="floating-img" style="top:69%; left:88%;" width="94" height="179">
+    <img src="photo3.jpg" class="floating-img" style="top:48%; left:23%;" width="67" height="133">
+    <img src="photo4.jpg" class="floating-img" style="top:53%; left:48%;" width="90" height="167">&nbsp;
+   <img src="photo5.jpg" class="floating-img" style="top:71%; left:5%;" width="88" height="142">
+    <img src="photo6.jpg" class="floating-img" style="top:38%; left:79%;" width="80" height="147">
+    <img src="photo7.jpg" class="floating-img" style="top:9%; left:90%;" width="82" height="157">
+    <img src="photo8.jpg" class="floating-img" style="top:79%; left:66%;" width="74" height="146">
+    <img src="photo9.jpg" class="floating-img" style="top:46%; left:1%;" width="64" height="130">
+    <img src="photo10.jpg" class="floating-img" style="top:81%; left:33%;" width="84" height="153">
+</div>
+<!-- PASSCODE SCREEN -->
+<div id="passcodeScreen" class="center-box">
+    <h1>For Louky💖</h1>
+    <input type="password" id="passcodeInput" placeholder="Enter passcode">
+    <br><br>
+        <button onclick="checkPasscode()">Enter</button>
+</div>
+
+<div id="videoScreen" class="hidden">
+
+    <div class="video-wrapper">
+
+        <!-- Top Text -->
+        <div class="top-text">MEMORIES</div>
+
+        <!-- Middle Row -->
+        <div class="video-row">
+
+            <div class="side-text left">SOME</div>
+
+            <video id="mainVideo" class="video-style" controls>
+                <source src="vidgf.mp4" type="video/mp4">
+            </video>
+
+            <div class="side-text right">OF &nbsp;&nbsp;US</div>
+
+        </div>
+
+    </div>
+
+    <br>
+    <button onclick="showQuestion()">Continue</button>
+
+</div>
+<!-- QUESTION + LETTER -->
+<div id="questionScreen" class="hidden center-box">
+    <h1>My dearest Louky,💌             </h1>
+
+    <div class="letter-container">
+               <div id="lockedLetter">
+            <h2 style="text-align:center;">Click me🔒</h2>
+        </div>
+
+        <div id="letterContent" class="hidden">
+            <p style="font-size:22px; font-weight:bold;">
+            Will you be my girlfriend💍?
+
+
+
+
+            </p>
+
+            <br>
+           <button onclick="sayYes()">YES💖</button>
+           <button id="noButton">NO </button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+function checkPasscode() {
+    let input = document.getElementById("passcodeInput").value;
+
+    if (input === "1807") {
+
+        document.getElementById("passcodeScreen").classList.add("hidden");
+        document.getElementById("floatingPhotos").style.display = "none";
+        document.getElementById("videoScreen").classList.remove("hidden");
+
+    } else {
+
+        document.getElementById("passcodeScreen").classList.add("hidden");
+        document.getElementById("errorScreen").classList.remove("hidden");
+
+    }
+}
+function showQuestion() {
+    document.getElementById("videoScreen").classList.add("hidden");
+    document.getElementById("questionScreen").classList.remove("hidden");
+}
+
+document.getElementById("lockedLetter").onclick = function() {
+    document.getElementById("lockedLetter").classList.add("hidden");
+    document.getElementById("letterContent").classList.remove("hidden");
+}
+function goBack() {
+    document.getElementById("errorScreen").classList.add("hidden");
+    document.getElementById("passcodeScreen").classList.remove("hidden");
+}
+function sayYes() {
+    startHearts();
+     startFlowers();
+}
+
+function startHearts() {
+    for (let i = 0; i < 30; i++) {
+        let heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "100vh";
+        heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+}
+
+function startFlowers() {
+    for (let i = 0; i < 20; i++) {
+        let flower = document.createElement("img");
+        flower.src = "pnggf.png"; /* ADD HIBISCUS IMAGE */
+        flower.classList.add("flower");
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.animationDuration = (3 + Math.random() * 5) + "s";
+        document.body.appendChild(flower);
+    }
+}
+
+</script>
+<script>
+let musicStarted = false;
+
+function startMusic() {
+    if (!musicStarted) {
+        let music = document.getElementById("bgMusic");
+        music.volume = 0.4; // adjust volume (0.1 - 1)
+        music.play();
+        musicStarted = true;
+    }
+}
+
+document.addEventListener("click", startMusic);
+document.addEventListener("touchstart", startMusic);
+</script>
+<script>
+let video = document.getElementById("mainVideo");
+let music = document.getElementById("bgMusic");
+
+// When video starts playing → mute music
+video.addEventListener("play", function() {
+    music.volume = 0;
+});
+
+// When video pauses → restore music
+video.addEventListener("pause", function() {
+    music.volume = 0.4; // same volume you set before
+});
+
+// When video ends → restore music
+video.addEventListener("ended", function() {
+    music.volume = 0.4;
+});
+</script>
+<script>
+let noBtn = document.getElementById("noButton");
+
+function moveButton() {
+    let buttonWidth = noBtn.offsetWidth;
+    let buttonHeight = noBtn.offsetHeight;
+
+    let maxX = window.innerWidth - buttonWidth;
+    let maxY = window.innerHeight - buttonHeight;
+
+    let x = Math.random() * maxX;
+    let y = Math.random() * maxY;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", moveButton);
+</script>
+</body>
+</html>
